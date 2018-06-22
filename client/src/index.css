@@ -1,0 +1,67 @@
+:root {
+  /* COLOR VARIABLES */
+  --darkest-blue: #041F37;
+  --darker-blue: #133453;
+  --blue: #2A4E6E;
+  --lighter-blue: #4A6B8A;
+  --lightest-blue: #728DA5;
+  --white: #FAFAFA;
+
+  /* FONT FAMILIES */
+  --font-primary: 'Roboto', sans-serif;
+
+  /* FONT SIZES */
+  --big-responsive-font: calc(48px + (56 - 24) * (100vw - 360px)/(960-360));
+  --medium-responsive-font: calc(48px + (48 - 20) * (100vw - 360px)/(960-360));
+  --small-responsive-font: calc(24px + (24 - 16) * (100vw - 360px)/(960-360));
+
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  font-family: sans-serif;
+  background: var(--lightest-blue);
+}
+
+.calendar {
+  background: var(--white) !important;
+  padding: 24px !important;
+  margin: 0 auto;
+  width: 90vw !important;
+  height: 66vh;
+  max-width: 640px;
+  display: flex !important;
+  flex-direction: column !important;
+  justify-content: flex-start;
+  align-items: center;
+  -webkit-box-shadow: 2px 2px 22px 1px rgba(19,52,83,0.29);
+  -moz-box-shadow: 2px 2px 22px 1px rgba(19,52,83,0.29);
+  box-shadow: 2px 2px 22px 1px rgba(19,52,83,0.29);
+}
+
+.calendar-tile {
+  border: none;
+  padding: 24px 4px;
+  background: none;
+  font-family: var(--font-primary);
+  font-size: 16px;
+  color: var(--darkest-blue);
+}
+
+.calendar-tile:hover {
+  cursor: pointer;
+  background: var(--lightest-blue);
+  color: var(--white);
+}
+
+.react-calendar__month-view__days__day--weekend {
+  color: var(--darkest-blue) !important;
+}
+
+.react-calendar__navigation button {
+  color: var(--lightest-blue);
+  font-size: var(--small-responsive-font);
+  font-family: var(--font-primary);
+}
+
