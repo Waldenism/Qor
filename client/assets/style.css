@@ -1,0 +1,25 @@
+/* CSS VARIABLES GO HERE */
+:root {
+  --main-font-family: monospace;
+  --main-font-color: darkslategray;
+  --secondary-font-color: mediumaquamarine;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  color: var(--main-font-color);
+  font-family: var(--main-font-family);
+}
+
+h1 {
+  border-bottom: 1px solid #ddd;
+}
+
+h1, h2 {
+  text-align: center;
+}
+
+h2 {
+  color: var(--secondary-font-color);
+}
