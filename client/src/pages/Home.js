@@ -1,5 +1,5 @@
 import React from 'react'
-import Calendar from 'react-calendar/dist/entry.nostyle';
+import Calendar from 'react-calendar';
 
 const Home = props => (
   <Calendar 

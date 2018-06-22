@@ -21,7 +21,7 @@ const headerStyle = {
 
 const h1Style = {
   margin: '0',
-  marginLeft: '12px',
+  marginLeft: '5vw',
   marginBottom: '16px',
   color: 'var(--white)',
   fontFamily: '"Playball", cursive',
