@@ -4,37 +4,40 @@ const Header = props => {
   return (
     <header style={headerStyle}>
       <h1 style={h1Style}>
-        QOR
+        Run Log
       </h1>
+      <img
+        src='./plus-purple.svg'
+        style={newButtonStyle}
+        alt='add new run' />
     </header>
   )
 }
 
 const headerStyle = {
   margin: '0 auto',
-  width: '100%',
+  marginBottom: '16px',
+  width: 'calc(100% - 10vw)',
   display: 'flex',
-  flexDirection: 'column',
-  justifyContent: 'center',
-  alignItems: 'flex-start'
+  flexDirection: 'row',
+  justifyContent: 'space-between',
+  alignItems: 'center',
+  borderBottom: '1px solid #DDD'
 }
 
 const h1Style = {
   margin: '0',
-  marginLeft: '5vw',
   marginBottom: '16px',
-  color: 'var(--white)',
-  fontFamily: '"Playball", cursive',
+  width: 'calc(100vw - 10vw)',
+  color: 'var(--main-purple)',
+  fontFamily: 'var(--font-display), cursive',
   fontSize: 'var(--big-responsive-font)',
+  fontStyle: 'italic'
 }
 
-const subHeaderStyle = {
-  fontFamily: '"Markazi Text", serif',
-  margin: '0',
-  marginLeft: '5%',
-  fontSize: 'var(--small-responsive-font)',
-  color: 'var(--white)',
-  letterSpacing: '.16em'
+const newButtonStyle = {
+  height: '48px',
+  width: '48px'
 }
 
 export default Header

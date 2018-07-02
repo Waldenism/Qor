@@ -1,0 +1,20 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 35.35 35.32">
+  <defs>
+    <style>
+      .cls-1 {
+        fill: none;
+        stroke: #551d7e;
+        stroke-miterlimit: 10;
+        stroke-width: 1.33px;
+      }
+    </style>
+  </defs>
+  <title>plus-purple</title>
+  <g id="Layer_2" data-name="Layer 2">
+    <g id="els2_player">
+      <path class="cls-1" d="M4.66.67h26a4,4,0,0,1,4,4v26a4,4,0,0,1-4,4h-26a4,4,0,0,1-4-4v-26a4,4,0,0,1,4-4Z"/>
+      <line class="cls-1" x1="17.69" y1="7.65" x2="17.69" y2="27.65"/>
+      <line class="cls-1" x1="7.69" y1="17.65" x2="27.69" y2="17.65"/>
+    </g>
+  </g>
+</svg>

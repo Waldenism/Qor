@@ -5,15 +5,24 @@
   --blue: #2A4E6E;
   --lighter-blue: #4A6B8A;
   --lightest-blue: #728DA5;
+
+  --main-purple: #551d7e;
+  --main-gold: #e2bd46;
+
   --white: #FAFAFA;
+  --dark-white: #F4F4F4;
+  --black: #0B0B0B;
 
   /* FONT FAMILIES */
-  --font-primary: 'Roboto', sans-serif;
+  --font-primary: 'Bitter', sans-serif;
+  --font-display: 'Kaushan Script', cursive;
+  --font-secondary: 'Encode Sans Condensed', sans-serif;
 
   /* FONT SIZES */
   --big-responsive-font: calc(48px + (56 - 24) * (100vw - 360px)/(960-360));
   --medium-responsive-font: calc(48px + (48 - 20) * (100vw - 360px)/(960-360));
   --small-responsive-font: calc(24px + (24 - 16) * (100vw - 360px)/(960-360));
+  --tiny-responsive-font: calc(16px + (16 - 12) * (100vw - 360px)/(960-360));
 
 }
 
@@ -21,15 +30,27 @@ body {
   margin: 0;
   padding: 0;
   font-family: sans-serif;
-  background: var(--lightest-blue);
+  background: var(--dark-white);
 }
+
+header > img:hover {
+  cursor: pointer;
+}
+
+/* CALENDAR VIEW SELECT MENU */
+li.view-select-item:hover {
+  cursor: pointer;
+}
+/*                           */
+
+/* CALENDAR STUFF */
 
 .calendar {
   background: var(--white) !important;
   padding: 24px !important;
   margin: 0 auto;
   width: 90vw !important;
-  height: 66vh;
+  min-height: 320px;
   max-width: 640px;
   display: flex !important;
   flex-direction: column !important;
@@ -38,6 +59,7 @@ body {
   -webkit-box-shadow: 2px 2px 22px 1px rgba(19,52,83,0.29);
   -moz-box-shadow: 2px 2px 22px 1px rgba(19,52,83,0.29);
   box-shadow: 2px 2px 22px 1px rgba(19,52,83,0.29);
+  border: none !important;
 }
 
 .calendar-tile {
@@ -45,23 +67,45 @@ body {
   padding: 24px 4px;
   background: none;
   font-family: var(--font-primary);
-  font-size: 16px;
-  color: var(--darkest-blue);
+  font-size: var(--tiny-responsive-font);
+  color: var(--black);
 }
 
 .calendar-tile:hover {
   cursor: pointer;
-  background: var(--lightest-blue);
-  color: var(--white);
+  background: var(--main-gold);
+  color: var(--black);
 }
 
-.react-calendar__month-view__days__day--weekend {
-  color: var(--darkest-blue) !important;
+.react-calendar__month-view__days__day--weekend:not(.react-calendar__tile--active) {
+  color: var(--black) !important;
+}
+
+.react-calendar__month-view__weekdays__weekday {
+  font-family: var(--font-primary) !important;
+  font-weight: 700 !important;
+}
+
+.react-calendar__month-view__days {
+  height: 50vh;
+}
+
+.react-calendar__tile--active {
+  background: var(--main-gold) !important;
+  color: var(--black) !important;
+}
+
+button.react-calendar__tile--active:enabled:hover, 
+button.react-calendar__tile--active:enabled:focus {
+  background: var(--main-gold) !important;
+  color: var(--black) !important;
 }
 
 .react-calendar__navigation button {
-  color: var(--lightest-blue);
+  color: var(--main-purple);
   font-size: var(--small-responsive-font);
   font-family: var(--font-primary);
 }
+
+/* END CALENDAR STUFF */
 
