@@ -6,15 +6,8 @@ class App extends Component {
   constructor (props) {
     super(props)
     this.state = {
-      loggedIn: true,
-      date: new Date()
+      loggedIn: true
     }
-
-    this.onChange = this.onChange.bind(this)
-  }
-
-  onChange (date) {
-    this.setState({ date })
   }
 
   render () {
