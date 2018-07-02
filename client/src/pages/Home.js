@@ -21,6 +21,7 @@ class Home extends Component {
   }
 
   onChangeDate (value) {
+    console.log(value)
     this.setState({
       date: value
     })
@@ -36,13 +37,12 @@ class Home extends Component {
         {
           calendarView === 'MONTH'
             ? <Calendar
-                className='calendar'
-                tileClassName='calendar-tile'
-                showNeighboringMonth={false}
-                value={date}
-                onChange={this.onChangeDate} />
+              className='calendar'
+              tileClassName='calendar-tile'
+              showNeighboringMonth={false}
+              value={date}
+              onChange={this.onChangeDate} />
             : 'Week View'
-
         }
       </div>
     )

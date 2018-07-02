@@ -1,31 +1,27 @@
 import React from 'react'
+import CalendarViewSelectItem from './CalendarViewSelectItem'
 
-const CalendarViewSelect = ({selected, handler}) => (
+const CalendarViewSelect = props => (
   <ul style={menuStyle}>
     {
-      views.map(item => (
-        <li
-          key={item.type}
-          style={{
-            ...menuItemStyle,
-            fontWeight: selected === item.type
-              ? '700' : '400'
-          }}
-          className='view-select-item'
-          onClick={() => handler(item.type)}>
-          {item.name}
-        </li>
+      calendarViews.map(item => (
+        <CalendarViewSelectItem
+          key={item.view}
+          type={item.view}
+          text={item.name}
+          {...props}
+        />
       ))
     }
   </ul>
 )
 
-const views = [
+const calendarViews = [
   {
-    type: 'MONTH',
+    view: 'MONTH',
     name: 'Month'
   }, {
-    type: 'WEEK',
+    view: 'WEEK',
     name: 'Week'
   }
 ]
@@ -41,12 +37,6 @@ const menuStyle = {
   justifyContent: 'space-between',
   alignItems: 'center',
   alignSelf: 'flex-end'
-}
-
-const menuItemStyle = {
-  marginLeft: '12px',
-  fontFamily: 'var(--font-secondary)',
-  color: 'var(--main-purple)'
 }
 
 export default CalendarViewSelect
