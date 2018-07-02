@@ -1,12 +1,12 @@
 import React from 'react'
 
 const CalendarViewSelectItem = ({
-  selected, 
-  handler, 
-  type, 
+  selected,
+  handler,
+  type,
   text
 }) => (
-  <li 
+  <li
     style={{
       ...menuItemStyle,
       fontWeight: selected === type

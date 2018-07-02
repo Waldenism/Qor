@@ -6,8 +6,8 @@ const CalendarViewSelect = props => (
     {
       calendarViews.map(item => (
         <CalendarViewSelectItem
-          key={item.view}
-          type={item.view}
+          key={item.viewType}
+          type={item.viewType}
           text={item.name}
           {...props}
         />
@@ -18,10 +18,10 @@ const CalendarViewSelect = props => (
 
 const calendarViews = [
   {
-    view: 'MONTH',
+    viewType: 'MONTH',
     name: 'Month'
   }, {
-    view: 'WEEK',
+    viewType: 'WEEK',
     name: 'Week'
   }
 ]
