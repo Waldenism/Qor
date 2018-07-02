@@ -1,13 +1,14 @@
 import React, {Component} from 'react'
 import Calendar from 'react-calendar'
 import CalendarViewSelect from '../components/CalendarViewSelect'
+import { MONTH } from '../constants'
 
 class Home extends Component {
   constructor (props) {
     super(props)
     this.state = {
       date: new Date(),
-      calendarView: 'MONTH'
+      calendarView: MONTH
     }
 
     this.onChangeDate = this.onChangeDate.bind(this)

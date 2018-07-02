@@ -1,10 +1,11 @@
 import React from 'react'
 import CalendarViewSelectItem from './CalendarViewSelectItem'
+import { CALENDAR_VIEWS } from '../constants'
 
 const CalendarViewSelect = props => (
   <ul style={menuStyle}>
     {
-      calendarViews.map(item => (
+      CALENDAR_VIEWS.map(item => (
         <CalendarViewSelectItem
           key={item.viewType}
           type={item.viewType}
@@ -15,16 +16,6 @@ const CalendarViewSelect = props => (
     }
   </ul>
 )
-
-const calendarViews = [
-  {
-    viewType: 'MONTH',
-    name: 'Month'
-  }, {
-    viewType: 'WEEK',
-    name: 'Week'
-  }
-]
 
 const menuStyle = {
   listStyleType: 'none',

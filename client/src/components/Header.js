@@ -8,7 +8,8 @@ const Header = props => {
       </h1>
       <img
         src='./plus-purple.svg'
-        style={newButtonStyle} />
+        style={newButtonStyle}
+        alt='add new run' />
     </header>
   )
 }
