@@ -4,7 +4,7 @@ const Modal = props => (
   <div
     style={modalStyle}
     className='modal'>
-    <p 
+    <p
       style={xStyle}
       className='modal-close-x'
       onClick={props.handleClose}>

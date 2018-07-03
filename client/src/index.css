@@ -48,6 +48,22 @@ p.modal-close-x:hover {
   cursor: pointer;
 }
 
+form.new-run-form > * {
+  margin-bottom: 12px;
+}
+
+form.new-run-form > input {
+  background: none;
+  color: var(--black);
+  font-family: var(--black);
+  border: none;
+  border-bottom: 1px solid var(--black);
+}
+
+form.new-run-form > input:focus {
+  outline: none;
+}
+
 /* CALENDAR STUFF */
 
 .calendar {

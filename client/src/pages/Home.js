@@ -2,13 +2,14 @@ import React from 'react'
 import Calendar from 'react-calendar'
 import CalendarViewSelect from '../components/CalendarViewSelect'
 import Modal from '../components/Modal'
+import NewRunEntry from '../components/NewRunEntry'
 import { MONTH } from '../constants'
 
 const Home = ({
-  date, 
+  date,
   calendarView,
-  modal, 
-  changeView, 
+  modal,
+  changeView,
   changeDate,
   closeModal
 }) => (
@@ -19,15 +20,21 @@ const Home = ({
     {
       calendarView === MONTH
         ? <Calendar
-            className='calendar'
-            tileClassName='calendar-tile'
-            showNeighboringMonth={false}
-            value={date}
-            onChange={changeDate} />
+          className='calendar'
+          tileClassName='calendar-tile'
+          showNeighboringMonth={false}
+          value={date}
+          onChange={changeDate} />
         : 'Week View'
     }
     {
-      modal && <Modal handleClose={closeModal}/>
+      modal &&
+      <Modal
+        handleClose={closeModal}>
+        <NewRunEntry
+          runDate={date} />
+      </Modal>
+
     }
   </div>
 )

@@ -46,7 +46,7 @@ class App extends Component {
   render () {
     return (
       <div className='container'>
-        <Header 
+        <Header
           handler={this.onAddNewRun} />
         <Main {...this.state}
           changeView={this.onChangeCalendarView}
