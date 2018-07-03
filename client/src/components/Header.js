@@ -1,18 +1,18 @@
 import React from 'react'
 
-const Header = props => {
-  return (
-    <header style={headerStyle}>
-      <h1 style={h1Style}>
-        Run Log
-      </h1>
-      <img
-        src='./plus-purple.svg'
-        style={newButtonStyle}
-        alt='add new run' />
-    </header>
-  )
-}
+const Header = props => (
+  <header style={headerStyle}>
+    <h1 style={h1Style}>
+      Run Log
+    </h1>
+    <img
+      onClick={props.handler}
+      src='./plus-purple.svg'
+      className='new-run-btn'
+      style={newButtonStyle}
+      alt='add new run' />
+  </header>
+)
 
 const headerStyle = {
   margin: '0 auto',

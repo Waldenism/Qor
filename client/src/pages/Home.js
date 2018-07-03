@@ -1,54 +1,43 @@
-import React, {Component} from 'react'
+import React from 'react'
 import Calendar from 'react-calendar'
 import CalendarViewSelect from '../components/CalendarViewSelect'
+import Modal from '../components/Modal'
+import NewRunEntry from '../components/NewRunEntry'
 import { MONTH } from '../constants'
 
-class Home extends Component {
-  constructor (props) {
-    super(props)
-    this.state = {
-      date: new Date(),
-      calendarView: MONTH
+const Home = ({
+  date,
+  calendarView,
+  modal,
+  changeView,
+  changeDate,
+  closeModal
+}) => (
+  <div style={homeStyle}>
+    <CalendarViewSelect
+      selected={calendarView}
+      handler={changeView} />
+    {
+      calendarView === MONTH
+        ? <Calendar
+          className='calendar'
+          tileClassName='calendar-tile'
+          showNeighboringMonth={false}
+          value={date}
+          onChange={changeDate} />
+        : 'Week View'
     }
+    {
+      modal &&
+      <Modal
+        handleClose={closeModal}>
+        <NewRunEntry
+          runDate={date} />
+      </Modal>
 
-    this.onChangeDate = this.onChangeDate.bind(this)
-    this.onChangeCalendarView = this.onChangeCalendarView.bind(this)
-  }
-
-  onChangeCalendarView (type) {
-    this.setState({
-      calendarView: type
-    })
-  }
-
-  onChangeDate (value) {
-    console.log(value)
-    this.setState({
-      date: value
-    })
-  }
-
-  render () {
-    const { date, calendarView } = this.state
-    return (
-      <div style={homeStyle}>
-        <CalendarViewSelect
-          selected={calendarView}
-          handler={this.onChangeCalendarView} />
-        {
-          calendarView === 'MONTH'
-            ? <Calendar
-              className='calendar'
-              tileClassName='calendar-tile'
-              showNeighboringMonth={false}
-              value={date}
-              onChange={this.onChangeDate} />
-            : 'Week View'
-        }
-      </div>
-    )
-  }
-}
+    }
+  </div>
+)
 
 const homeStyle = {
   display: 'flex',
