@@ -43,6 +43,11 @@ li.view-select-item:hover {
 }
 /*                           */
 
+/* MODAL STUFF */
+p.modal-close-x:hover {
+  cursor: pointer;
+}
+
 /* CALENDAR STUFF */
 
 .calendar {
@@ -99,6 +104,11 @@ button.react-calendar__tile--active:enabled:hover,
 button.react-calendar__tile--active:enabled:focus {
   background: var(--main-gold) !important;
   color: var(--black) !important;
+}
+
+.react-calendar__navigation button:enabled:hover, 
+.react-calendar__navigation button:enabled:focus {
+  background: none !important;
 }
 
 .react-calendar__navigation button {
