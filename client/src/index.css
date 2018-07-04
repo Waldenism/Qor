@@ -77,30 +77,26 @@ div.form-field p {
   margin-right: 8px;
 }
 
-form.new-run-form input {
-  margin-right: 4px;
-  background: var(--white);
-  color: var(--black);
-  font-family: var(--font-secondary);
-  font-size: var(--tiny-responsive-font);
-  border: none;
-  border: 1px solid var(--black);
-  padding: 8px 0px 8px 0px;
-  text-align: center;
-  box-sizing: border-box;
-}
-
+form.new-run-form input,
 form.new-run-form textarea {
   background: var(--white);
   color: var(--black);
   font-family: var(--font-secondary);
   font-size: var(--tiny-responsive-font);
-  border: none;
+  border: 1px solid var(--black);
+  box-sizing: border-box;
+}
+
+form.new-run-form input {
+  margin-right: 4px;
+  padding: 8px 0px 8px 0px;
+  text-align: center;
+}
+
+form.new-run-form textarea {
   margin-top: 8px;
   padding: 8px;
   width: 100%;
-  border: 1px solid var(--black);
-  box-sizing: border-box;
 }
 
 form.new-run-form label {
@@ -129,9 +125,7 @@ form.new-run-form button:active {
   padding: 24px !important;
   margin: 0 auto;
   width: 90vw !important;
-  /*min-height: 480px;*/
   clear: both;
-  /*flex: 1;*/
   height: auto;
   max-width: 640px;
   display: flex !important;
