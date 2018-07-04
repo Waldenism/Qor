@@ -7,11 +7,13 @@
   --lightest-blue: #728DA5;
 
   --main-purple: #551d7e;
+  --purple-fade: rgba(85, 29, 126, 0.57);
   --main-gold: #e2bd46;
 
   --white: #FAFAFA;
   --dark-white: #F4F4F4;
   --black: #0B0B0B;
+  --black-fade: rgba(11, 11, 11, 0.35);
 
   /* FONT FAMILIES */
   --font-primary: 'Bitter', sans-serif;
@@ -23,7 +25,7 @@
   --medium-responsive-font: calc(48px + (48 - 20) * (100vw - 360px)/(960-360));
   --small-responsive-font: calc(24px + (24 - 16) * (100vw - 360px)/(960-360));
   --tiny-responsive-font: calc(16px + (16 - 12) * (100vw - 360px)/(960-360));
-
+  --teeny-responsive-font: calc(12px + (16 - 12) * (100vw - 360px)/(960-360));
 }
 
 body {
@@ -52,15 +54,71 @@ form.new-run-form > * {
   margin-bottom: 12px;
 }
 
-form.new-run-form > input {
-  background: none;
-  color: var(--black);
-  font-family: var(--black);
-  border: none;
-  border-bottom: 1px solid var(--black);
+form.new-run-form > div.form-field {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: flex-start;
+  width: 100%;
 }
 
-form.new-run-form > input:focus {
+div.distance-field,
+div.duration-field,
+div.comment-field {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  align-items: center;
+  font-family: var(--font-secondary);
+  width: 100%;
+}
+
+div.form-field p {
+  margin-right: 8px;
+}
+
+form.new-run-form input {
+  margin-right: 4px;
+  background: var(--white);
+  color: var(--black);
+  font-family: var(--font-secondary);
+  font-size: var(--tiny-responsive-font);
+  border: none;
+  border: 1px solid var(--black);
+  padding: 8px 0px 8px 0px;
+  text-align: center;
+  box-sizing: border-box;
+}
+
+form.new-run-form textarea {
+  background: var(--white);
+  color: var(--black);
+  font-family: var(--font-secondary);
+  font-size: var(--tiny-responsive-font);
+  border: none;
+  margin-top: 8px;
+  padding: 8px;
+  width: 100%;
+  border: 1px solid var(--black);
+  box-sizing: border-box;
+}
+
+form.new-run-form label {
+  font-family: var(--font-secondary);
+  font-size: var(--teeny-responsive-font);
+  font-weight: 600;
+  margin-bottom: 4px;
+}
+
+form.new-run-form button:hover {
+  cursor: pointer;
+  background: var(--main-purple) !important;
+  transition: all .1s ease;
+}
+
+form.new-run-form input:focus,
+form.new-run-form textarea:focus,
+form.new-run-form button:active {
   outline: none;
 }
 
@@ -71,10 +129,14 @@ form.new-run-form > input:focus {
   padding: 24px !important;
   margin: 0 auto;
   width: 90vw !important;
-  min-height: 320px;
+  /*min-height: 480px;*/
+  clear: both;
+  /*flex: 1;*/
+  height: auto;
   max-width: 640px;
   display: flex !important;
   flex-direction: column !important;
+  flex: 1 !important;
   justify-content: flex-start;
   align-items: center;
   -webkit-box-shadow: 2px 2px 22px 1px rgba(19,52,83,0.29);
