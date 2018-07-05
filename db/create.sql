@@ -30,7 +30,7 @@ CREATE TABLE workouts (
   duration INTEGER NOT NULL CHECK (duration>0),
   comment VARCHAR(10000), 
   feeling INTEGER,
-  run_date TIMESTAMP NOT NULL,
+  workout_date TIMESTAMP NOT NULL,
   created_at TIMESTAMP DEFAULT NOW(),
   updated_at TIMESTAMP DEFAULT NOW()
 );
