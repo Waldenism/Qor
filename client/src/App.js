@@ -10,12 +10,14 @@ class App extends Component {
       loggedIn: true,
       date: new Date(),
       calendarView: MONTH,
-      modal: false
+      modal: false,
+      workouts: []
     }
 
     this.onChangeDate = this.onChangeDate.bind(this)
     this.onChangeCalendarView = this.onChangeCalendarView.bind(this)
     this.onAddNewRun = this.onAddNewRun.bind(this)
+    this.onSaveWorkout = this.onSaveWorkout.bind(this)
     this.onCloseModal = this.onCloseModal.bind(this)
   }
 
@@ -37,6 +39,15 @@ class App extends Component {
     })
   }
 
+  onSaveWorkout (distance, time, comment) {
+    console.log(`Distance: ${distance} miles`)
+    console.log(`Time in seconds: ${time}`)
+    console.log(`Commentary: ${comment}`)
+    this.setState({
+      modal: false
+    })
+  }
+
   onCloseModal () {
     this.setState({
       modal: false
@@ -51,7 +62,8 @@ class App extends Component {
         <Main {...this.state}
           changeView={this.onChangeCalendarView}
           changeDate={this.onChangeDate}
-          closeModal={this.onCloseModal} />
+          closeModal={this.onCloseModal}
+          saveWorkout={this.onSaveWorkout} />
       </div>
     )
   }

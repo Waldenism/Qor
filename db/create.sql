@@ -19,16 +19,18 @@ CREATE TABLE users (
   is_admin BOOLEAN DEFAULT FALSE
 );
 
-CREATE TABLE runs (
-  run_id SERIAL PRIMARY KEY,
-  run_user_id INTEGER REFERENCES users(user_id),
-  distance REAL NOT NULL,
-  seconds INTEGER NOT NULL CHECK (seconds >= 0 AND seconds < 60),
-  minutes INTEGER NOT NULL CHECK (minutes >= 0 AND minutes <= 60),
-  hours INTEGER NOT NULL,
+CREATE TABLE workouts (
+  workout_id SERIAL PRIMARY KEY,
+  workout_user_id INTEGER REFERENCES users(user_id),
+  workout_type VARCHAR(32) CHECK (
+    workout_type='RUN' OR 
+    workout_type='SWIM' OR 
+    workout_type='BIKE'),
+  distance REAL,
+  duration INTEGER NOT NULL CHECK (duration>0),
   comment VARCHAR(10000), 
   feeling INTEGER,
-  run_date TIMESTAMP NOT NULL,
+  workout_date TIMESTAMP NOT NULL,
   created_at TIMESTAMP DEFAULT NOW(),
   updated_at TIMESTAMP DEFAULT NOW()
 );

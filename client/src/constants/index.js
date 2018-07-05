@@ -11,3 +11,9 @@ export const CALENDAR_VIEWS = [
     name: 'Week'
   }
 ]
+
+export const DISTANCE_ERROR =
+  `Please enter a distance greater than zero.`
+
+export const DURATION_TOTAL_ERROR =
+  `Total workout duration must be greater than zero.`

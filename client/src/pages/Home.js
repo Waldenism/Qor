@@ -11,7 +11,8 @@ const Home = ({
   modal,
   changeView,
   changeDate,
-  closeModal
+  closeModal,
+  saveWorkout
 }) => (
   <div style={homeStyle}>
     <CalendarViewSelect
@@ -32,7 +33,8 @@ const Home = ({
       <Modal
         handleClose={closeModal}>
         <NewRunEntry
-          runDate={date} />
+          runDate={date}
+          handler={saveWorkout} />
       </Modal>
 
     }
