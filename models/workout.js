@@ -32,6 +32,7 @@ module.exports = {
         )
         VALUES($1, $2, $3, $4, $5, $6, $7)`;
       const values = args;
+      
       client.query(text, values, (err, res) => {
         if (err) {
           reject(err.stack);
