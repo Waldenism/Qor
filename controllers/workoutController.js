@@ -1,10 +1,21 @@
 const Workouts = require('../models/workout.js');
 
 module.exports = {
-  getWorkouts: (req, res) => {
+  getAllWorkouts: (req, res) => {
     const { id } = req.query;
-    
+
      Workouts.findAll(id)
+    .then(results => res.json(results))
+    .catch(err => console.log(err));
+  },
+
+  getWorkoutsByMonth: (req, res) => {
+    const {
+      id,
+      startDate,
+      endDate
+    } = req.query;
+    Workouts.findAllRange(id, startDate, endDate)
     .then(results => res.json(results))
     .catch(err => console.log(err));
   },
