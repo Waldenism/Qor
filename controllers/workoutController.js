@@ -9,7 +9,7 @@ module.exports = {
     .catch(err => console.log(err));
   },
 
-  getWorkoutsByMonth: (req, res) => {
+  getWorkoutsByDateRange: (req, res) => {
     const {
       id,
       startDate,

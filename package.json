@@ -10,5 +10,5 @@
   "scripts": {
     "start": "node server.js"
   },
-  "proxy": "http://localhost:3001"
+  "proxy": "http://localhost:3001/"
 }
